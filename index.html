@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 align="center">
+      JavaScript Questions
+      <br />
+      Array of Objects
+    </h1>
+    <div class="box">
+      <h2>Question</h2>
+      <pre>
+    "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+            {name: 'Baba', id: 101, marks : 23 },
+            {name: 'yaga', id: 200, marks : 45 },
+            {name: 'Wick', id: 115, marks : 75 } ] "</pre
+      >
+    </div>
+
+    <div class="box">
+      <h2>
+        Question 1 : We are interested in retrieving only the name of the
+        students and all the names should be in caps. <br />
+        ['JOHN', 'BABA', 'YAGA', 'WICK']
+      </h2>
+      <pre>
+    let arr = [];
+    for (let i = 0; i < studentRecords.length; i++) {
+        arr.push(studentRecords[i].name.toUpperCase());
+    }
+    console.log(arr);
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>
+        Question 2: Suppose we have the same dataset as above but this time we
+        want to get the details of students who scored more than 50 marks.<br />
+        [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75
+        }]
+      </h2>
+      <pre>
+    above = [];
+    for (let i = 0; i < studentRecords.length; i++) {
+    if (studentRecords[i].marks >= 50) {
+        above.push(studentRecords[i]);
+    }
+    }
+    console.log(above);</pre
+      >
+    </div>
+
+    <div class="box">
+      <h2>
+        Question 3: Retrieve the details of students who scored more than 50
+        marks and have id greater than 120.
+      </h2>
+      <pre>
+    aboveId = [];
+    for (let i = 0; i < studentRecords.length; i++) {
+    if (studentRecords[i].marks >= 50 && studentRecords[i].id > 120) {
+        aboveId.push(studentRecords[i]);
+    }
+    }
+    console.log(aboveId);</pre
+      >
+    </div>
+
+    <div class="box">
+      <h2>
+        Question 4: Consider the same scenario we have discussed above, but this
+        time we would like to know the sum total of the marks of the students.
+      </h2>
+      <pre>
+    let sum = 0;
+    for (let i = 0; i < studentRecords.length; i++) {
+    sum += studentRecords[i].marks;
+    }
+    console.log(sum);
+    </pre
+      >
+    </div>
+    <div class="box">
+      <h2>
+        Question 5: This time we want to get only the names of the students who
+        scored more than 50 marks from the same dataset used above.
+      </h2>
+      <pre>
+    let names = [];
+    for (let i = 0; i < studentRecords.length; i++) {
+    if (studentRecords[i].marks > 50) {
+        names.push(studentRecords[i].name.toUpperCase());
+    }
+    }
+    console.log(names);</pre
+      >
+    </div>
+
+    <div class="box">
+      <h2>
+        Question 6: This time we are required to print the sum of marks of the
+        students with id > 120.
+      </h2>
+      <pre>
+    sum2 = 0;
+    for (let i = 0; i < studentRecords.length; i++) {
+    if (studentRecords[i].id > 120) {
+        sum2 += studentRecords[i].marks;
+    }
+    }
+    console.log(sum2);</pre
+      >
+    </div>
+
+    <div class="box">
+      <h2>
+        Question 7: This time we are required to print the total marks of the
+        students with marks greater than 50 after a grace of 15 marks has been
+        added to those students who scored less than 50.
+      </h2>
+      <pre>
+    const grace = 15;
+    let total = 0;
+    for (let i = 0; i < studentRecords.length; i++) {
+    let mark = 0;
+    if (studentRecords[i].marks < 50) {
+        mark = studentRecords[i].marks;
+        mark += grace;
+        if (mark > 50) {
+        total += mark;
+        }
+    }
+    }
+    console.log(total);</pre
+      >
+    </div>
+
+    <div class="box">
+      <h2>
+        Question 8: Create 6 objects , each object will have name, class, roll
+        no as properties. Store these objects in an array of objects.
+      </h2>
+      <pre>
+    let StuArray = [];
+    function Student(name, className, rollNo) {
+    (this.StuName = name), (this.stuClass = className), (this.StuRollNo = rollNo);
+    }
+    let Student1 = new Student("EA17", "Sept", 1);
+    let Student2 = new Student("EA16", "Aug", 2);
+    let Student3 = new Student("EA18", "Oct", 3);
+    let Student4 = new Student("EA19", "Nov", 4);
+    let Student5 = new Student("EA20", "Dec", 5);
+    let Student6 = new Student("EA21", "Jan", 6);
+    StuArray.push(Student1);
+    StuArray.push(Student2);
+    StuArray.push(Student3);
+    StuArray.push(Student4);
+    StuArray.push(Student5);
+    StuArray.push(Student6);
+    console.log(StuArray);</pre
+      >
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
